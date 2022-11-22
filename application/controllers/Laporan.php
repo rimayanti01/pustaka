@@ -85,7 +85,7 @@ class Laporan extends CI_Controller
     }
     public function export_excel_pinjam()
     {
-        $data = array('title' => 'Laporan Data Peminjaman Buku', 'laporan' => $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.id and p.no_pinjam=d.no_pinjam")->result_array());
+        $data = array('title' => 'Laporan Data Peminjaman Buku', 'laporan' => $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.id  and p.no_pinjam=d.no_pinjam")->result_array());
         $this->load->view('pinjam/export-excel-pinjam', $data);
     }
 }
